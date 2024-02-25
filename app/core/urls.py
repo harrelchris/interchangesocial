@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.contrib import admin
+from django.contrib.admin.views.decorators import staff_member_required
 from django.urls import include, path
 
 urlpatterns = [
@@ -8,6 +9,7 @@ urlpatterns = [
     path("", include("public.urls"), name="public"),
 ]
 
+admin.site.login = staff_member_required(admin.site.login, login_url=settings.LOGIN_URL)
 admin.site.index_title = settings.ADMIN_INDEX_TITLE
 admin.site.name = settings.ADMIN_NAME
 admin.site.site_header = settings.ADMIN_SITE_HEADER
