@@ -104,3 +104,31 @@ STATICFILES_DIRS = [
 ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "app.verbose": {
+            "format": "[{asctime}.{msecs:0<3.0f}] {levelname} {pathname}:{funcName}:{lineno} [{process}:{thread}] {message}",  # noqa: E501
+            "datefmt": "%Y-%m-%d %H:%M:%S",
+            "style": "{",
+        },
+    },
+    "handlers": {
+        "app.console": {
+            "class": "logging.StreamHandler",
+            "formatter": "app.verbose",
+            "level": "DEBUG",
+        },
+    },
+    "loggers": {
+        "app": {
+            "handlers": [
+                "app.console",
+            ],
+            "level": "DEBUG",
+            "propagate": True,
+        },
+    },
+}
