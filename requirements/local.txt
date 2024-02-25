@@ -1,1 +1,7 @@
 -r base.txt
+
+bandit
+black
+flake8
+pyupgrade
+reorder-python-imports
