@@ -7,6 +7,4 @@ admin.site.name = "admin"
 admin.site.site_header = "Django administration"
 admin.site.site_title = "Site administration"
 
-admin.site.login = staff_member_required(
-    admin.site.login, login_url=settings.LOGIN_URL
-)
+admin.site.login = staff_member_required(admin.site.login, login_url=settings.LOGIN_URL)
