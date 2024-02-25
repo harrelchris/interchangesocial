@@ -4,7 +4,7 @@
 sudo apt update
 sudo apt upgrade -y
 sudo apt install git -y
-sudo git clone https://github.com/harrelchris/min-django.git /srv/web
+sudo git clone https://github.com/harrelchris/interchangesocial.git /srv/web
 sudo bash /srv/web/deploy/debian/install.sh
 sudo /srv/web/venv/bin/python3 /srv/web/app/manage.py createsuperuser
 ```
