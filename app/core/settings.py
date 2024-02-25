@@ -146,6 +146,14 @@ LOGGING = {
 
 ADMIN_URL = env.str("ADMIN_URL", "admin/")
 
+ADMIN_INDEX_TITLE = "Site administration"
+
+ADMIN_NAME = "admin"
+
+ADMIN_SITE_HEADER = "Django administration"
+
+ADMIN_SITE_TITLE = "Site administration"
+
 AUTH_USER_MODEL = "users.User"
 
 SOCIALACCOUNT_PROVIDERS = {
