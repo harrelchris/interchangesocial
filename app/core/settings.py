@@ -132,3 +132,5 @@ LOGGING = {
         },
     },
 }
+
+ADMIN_URL = env.str("ADMIN_URL", "admin/")
