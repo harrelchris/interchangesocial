@@ -31,6 +31,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "common",
+    "users",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -134,3 +135,5 @@ LOGGING = {
 }
 
 ADMIN_URL = env.str("ADMIN_URL", "admin/")
+
+AUTH_USER_MODEL = "users.User"
