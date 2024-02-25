@@ -9,3 +9,5 @@ python3 -m flake8 app
 python3 -m bandit --recursive --quiet --exclude test,migrations app
 
 python3 -m reorder_python_imports
+
+python3 -m pyupgrade
