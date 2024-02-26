@@ -36,7 +36,8 @@ class OrganizationDetailView(DetailView):
     template_name = "organizations/detail.html"
 
     def get_object(self, queryset=None):
-        return Organization.objects.get(name=self.kwargs.get("name"))
+        return Organization.objects.get(name=self.kwargs.get("organization_name"))
+
 
 class EventCreateView(LoginRequiredMixin, CreateView):
     model = Event
