@@ -1,0 +1,15 @@
+{% extends "organizations/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Create Organization{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <form class="m-auto w-25" method="post">
+      <h2 class="text-center">Create Organization</h2>
+      {% csrf_token %}
+      {{ form|crispy }}
+      <input type="submit" value="Submit" class="btn btn-lg btn-primary w-100">
+    </form>
+  </div>
+{% endblock %}

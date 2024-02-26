@@ -1,0 +1,18 @@
+{% extends "organizations/base.html" %}
+
+{% block title %}Organizations List{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="text-center mt-3">Organizations List</h1>
+    {% if organizations %}
+      <ul>
+        {% for organization in organizations %}
+          <li><a href="{% url 'organization:detail' name=organization.name %}">{{ organization.name }}</a></li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No organizations found</p>
+    {% endif %}
+  </div>
+{% endblock %}

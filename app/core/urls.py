@@ -7,6 +7,7 @@ urlpatterns = [
     path(settings.ADMIN_URL, admin.site.urls),
     path("accounts/", include("allauth.urls")),
     path("", include("public.urls"), name="public"),
+    path("organizations/", include("organizations.urls"), name="organizations"),
 ]
 
 admin.site.login = staff_member_required(admin.site.login, login_url=settings.LOGIN_URL)
