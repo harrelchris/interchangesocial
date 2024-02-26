@@ -30,6 +30,8 @@ THIRD_PARTY_APPS = [
     "allauth.account",
     "allauth.socialaccount",
     "allauth.socialaccount.providers.google",
+    "crispy_bootstrap5",
+    "crispy_forms",
 ]
 
 LOCAL_APPS = [
@@ -171,3 +173,7 @@ LOGIN_URL = "account_login"
 LOGIN_REDIRECT_URL = "public:index"
 
 LOGOUT_REDIRECT_URL = "account_login"
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
