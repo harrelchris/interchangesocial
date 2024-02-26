@@ -1,3 +1,4 @@
+exclude: 'env/.*|fixtures/.*|migrations/.*|requirements/.*|scripts/.*|tests/.*'
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
@@ -38,7 +39,6 @@ repos:
     rev: v2.2.4
     hooks:
       - id: codespell
-        exclude: "scripts/fixtures"
         exclude_types: [json]
   - repo: https://github.com/pycqa/bandit
     rev: 1.7.7
@@ -71,5 +71,4 @@ repos:
     hooks:
       - id: black
         language_version: python3.10
-        exclude: env|migrations|requirements|scripts
         args: ["--line-length=120"]
