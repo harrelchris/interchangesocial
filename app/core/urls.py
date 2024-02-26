@@ -1,7 +1,8 @@
 from django.conf import settings
 from django.contrib import admin
 from django.contrib.admin.views.decorators import staff_member_required
-from django.urls import include, path
+from django.urls import include
+from django.urls import path
 
 urlpatterns = [
     path(settings.ADMIN_URL, admin.site.urls),
