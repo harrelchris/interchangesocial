@@ -28,6 +28,14 @@ scripts\run
 .\scripts\run
 ```
 
+## Code Quality
+
+This project uses pre-commit to maintain code quality
+
+```shell
+pre-commit run --all-files
+```
+
 ## Deploy
 
 See the Debian deployment [README.md](./deploy/debian/README.md)
