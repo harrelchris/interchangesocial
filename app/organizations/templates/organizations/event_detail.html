@@ -1,0 +1,25 @@
+{% extends "organizations/base.html" %}
+
+{% block title %}{{ event.name }}{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="text-center mt-3">{{ event.name }}</h1>
+    <h2>Organization</h2>
+    <p><a href="{{ event.organization.get_absolute_url }}">{{ event.organization.name }}</a></p>
+    <h2>Creator</h2>
+    <p>{{ event.creator }}</p>
+    <h2>Moderators</h2>
+    <ul>
+      {% for moderator in event.moderators.all %}
+        <li>{{ moderator.username }}</li>
+      {% endfor %}
+    </ul>
+    <h2>Members</h2>
+    <ul>
+      {% for member in event.members.all %}
+        <li>{{ member.username }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
