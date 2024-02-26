@@ -1,0 +1,23 @@
+{% extends "organizations/base.html" %}
+
+{% block title %}{{ organization.name }}{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="text-center mt-3">{{ organization.name }}</h1>
+    <h2>Creator</h2>
+    <p>{{ organization.creator }}</p>
+    <h2>Moderators</h2>
+    <ul>
+      {% for moderator in organization.moderators.all %}
+        <li>{{ moderator.username }}</li>
+      {% endfor %}
+    </ul>
+    <h2>Members</h2>
+    <ul>
+      {% for member in organization.members.all %}
+        <li>{{ member.username }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
