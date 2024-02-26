@@ -14,6 +14,10 @@ class Organization(BaseModel):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse_lazy("organizations:detail", kwargs={"organization_name": self.name})
+
+
 class Event(BaseModel):
     name = models.CharField(max_length=512)
     organization = models.ForeignKey(Organization, on_delete=models.CASCADE, null=False)

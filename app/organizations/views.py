@@ -1,6 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
-from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from django.views.generic import DetailView
 from django.views.generic import ListView
@@ -28,7 +27,7 @@ class OrganizationCreateView(LoginRequiredMixin, CreateView):
         self.object.save()
         self.object.moderators.add(self.request.user)
         self.object.members.add(self.request.user)
-        return redirect(to=reverse_lazy(viewname="organization:detail", kwargs={"name": self.object.name}))
+        return redirect(to=self.object.get_absolute_url())
 
 
 class OrganizationDetailView(DetailView):
