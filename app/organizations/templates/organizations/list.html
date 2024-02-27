@@ -8,7 +8,7 @@
     {% if organizations %}
       <ul>
         {% for organization in organizations %}
-          <li><a href="{% url 'organization:detail' name=organization.name %}">{{ organization.name }}</a></li>
+          <li><a href="{{ organization.get_absolute_url }}">{{ organization.name }}</a></li>
         {% endfor %}
       </ul>
     {% else %}

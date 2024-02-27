@@ -19,5 +19,11 @@
         <li>{{ member.username }}</li>
       {% endfor %}
     </ul>
+    <h2>Events</h2>
+    <ul>
+      {% for event in organization.event_set.all %}
+        <li><a href="{{ event.get_absolute_url }}">{{ event.name }}</a></li>
+      {% endfor %}
+    </ul>
   </div>
 {% endblock %}
